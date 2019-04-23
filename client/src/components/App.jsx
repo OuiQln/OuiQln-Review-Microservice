@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import UniqloPro from '../assets/fonts/UniqloPro.ttf';
 
+import RatingDist from './RatingDist';
+import WriteAReview from './WriteAReview';
 /*
   This app needs tho display three components
   and store all of the data for the reviews section
@@ -26,17 +28,11 @@ const GlobalStyle = createGlobalStyle`
   font-style: normal;
   font-weight: 100;
 }
-
-div {
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-}
 `;
 
-const StyledP = styled.p`
-  color: blue;
-  font-family: UniqloPro;
+const ReviewStatsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 class App extends Component {
@@ -52,9 +48,10 @@ class App extends Component {
     return (
       <>
         <GlobalStyle />
-        <div>
-          <StyledP>{string}</StyledP>
-        </div>
+        <ReviewStatsContainer>
+          <RatingDist />
+          <WriteAReview />
+        </ReviewStatsContainer>
       </>
     );
   }
