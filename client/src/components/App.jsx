@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { GlobalStyle, StyledP, WriteRevBox } from './elements';
+import styled, { createGlobalStyle } from 'styled-components';
+import UniqloPro from '../assets/fonts/UniqloPro.ttf';
 
 /*
   This app needs tho display three components
@@ -16,7 +17,27 @@ import { GlobalStyle, StyledP, WriteRevBox } from './elements';
       -size breakdown
       -age breakdown
       -height breakdown
-      */
+*/
+
+const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: UniqloPro;
+  src: url(${UniqloPro}) format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+
+div {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+`;
+
+const StyledP = styled.p`
+  color: blue;
+  font-family: UniqloPro;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +55,6 @@ class App extends Component {
         <div>
           <StyledP>{string}</StyledP>
         </div>
-        <WriteRevBox>Hello World</WriteRevBox>
       </>
     );
   }
